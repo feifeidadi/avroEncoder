@@ -1,5 +1,5 @@
-#ifndef __DATA_ENCODER_H__
-#define __DATA_ENCODER_H__
+#ifndef __AVRO_ENCODER_H__
+#define __AVRO_ENCODER_H__
 
 #include <iostream>
 #include <fstream>
