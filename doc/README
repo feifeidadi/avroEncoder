@@ -1,0 +1,14 @@
+AVRO wrapper API to return an AVRO encoded buffer.
+
+To use this API, you need to:
+  1. Generate header file by avrogencpp basing on your json schema file
+  2. Include inc/avroEncoder.h in your application
+  3. Declear an avroEncoder<..> object
+  4. Call below two APIs accordingly in your application
+	template <class T>
+	int avroEncoder<T>::init(const char *jsonSchema)
+
+	template<typename T>
+	uint8_t* avroEncoder<T>::binaryEncode(T &dataStruct, int &length)
+
+View src/avroEncoder_test.cpp for more details please.
