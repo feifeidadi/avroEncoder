@@ -1,6 +1,8 @@
 #include "cpx.h"
 #include "avroEncoder.h"
 
+#define SCHEMA_FILE "../schema/cpx.json"
+
 static
 void avroEncode(c::cpx &c1)
 {
@@ -16,7 +18,10 @@ main()
 
     int len = 0;
     avroEncoder<c::cpx> test;
-    test.init("../schema/cpx.json");
+    if(test.init(SCHEMA_FILE) != 0) {
+        return -1;
+    }
+
     uint8_t* avroBinBuf = test.binaryEncode(c1, len);
 
 #ifdef DEBUG
